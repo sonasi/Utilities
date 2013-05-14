@@ -13,13 +13,20 @@
 
 from ROOT import *
 import numpy as np
-import pyBNN
+#import pyBNN
 import sys
 from time import sleep
 import array, os, sys, re
 
 import plot_util
+from plotutil import *
 
+
+# Requires plotutil.py
+setStyle()
+
+gROOT.ProcessLine(".L pyBNN.cc+")
+gROOT.ProcessLine(".L Systematics.cc+")
 
 #Library
 ROOT.gSystem.AddIncludePath("-I $ROOFITSYS/include/")
@@ -29,9 +36,10 @@ ROOT.gSystem.Load("/home/jbochenek/work/Limits/CreateDatacards/include/HiggsCSan
 ROOT.gSystem.Load("/home/jbochenek/work/Limits/CreateDatacards/include/HiggsCSandWidthSM4_cc.so")
 
 
+
 #Declare BNN
 myCSW = HiggsCSandWidth("/home/jbochenek/work/Limits/CreateDatacards/include/txtFiles")
-t = pyBNN.BayesianNNinterface()
+t = BayesianNN()
 
 print myCSW.HiggsCS(1, 125, 8)
 
@@ -44,7 +52,7 @@ mvavarset = [
 reader1 = TMVA.Reader()
 var1_ = []
 for i, var1 in enumerate(mvavarset):
-	var1_.append(array.array('f',[0]))
+	var1_.append(array('f',[0]))
 	reader1.AddVariable(var1,var1_[i])
 reader1.BookMVA("MLP","/home/jbochenek/work/HZZ4l_2013/tmva/weights/TMVAClassification6_cat2_MLP.weights.xml")
 
@@ -72,6 +80,8 @@ def makeplot3d_data(files, name, xmin, ymin, zmin, xmax, ymax, zmax, xbins, ybin
 
     bnn2d = TH2F(name+"_2d", name+"_2d", xbins, xmin, xmax, ybins, ymin, ymax)
 
+    bnn3d_mass = TH3F(name+"_mass_3d", name+"_mass_3d", xbins, xmin, xmax, ybins, ymin, ymax, zbins, zmin, zmax)
+
 
     nbinsX=21
     nbinsYps=25
@@ -81,9 +91,9 @@ def makeplot3d_data(files, name, xmin, ymin, zmin, xmax, ymax, zmax, xbins, ybin
     binsYps = [0.000, 0.100, 0.150, 0.200, 0.233, 0.266, 0.300, 0.333, 0.366, 0.400, 0.433, 0.466, 0.500, 0.533, 0.566, 0.600, 0.633, 0.666, 0.700, 0.733, 0.766, 0.800, 0.850, 0.900, 0.950, 1.000]
     binsYgrav = [0.000, 0.100, 0.150, 0.175 , 0.200, 0.225, 0.250, 0.275, 0.300, 0.325, 0.350, 0.375, 0.400, 0.425 , 0.450, 0.475, 0.500, 0.525, 0.575, 0.600, 0.633, 0.666, 0.700, 0.733 , 0.766, 0.800, 0.850, 0.900, 0.950, 1.000]
 
-    abinsX = array.array('d',binsX)
-    abinsYps = array.array('d',binsYps)
-    abinsYgrav = array.array('d',binsYgrav)
+    abinsX = array('d',binsX)
+    abinsYps = array('d',binsYps)
+    abinsYgrav = array('d',binsYgrav)
     
     bnn_jcp_2PM = TH2F(name+"_2PM", name+"_2PM", nbinsX, abinsX, nbinsYgrav, abinsYgrav)
     bnn_jcp_0M  = TH2F(name+"_0M", name+"_0M", nbinsX, abinsX, nbinsYps, abinsYps)
@@ -233,9 +243,9 @@ def makeplot3d(files, name, xmin, ymin, zmin, xmax, ymax, zmax, xbins, ybins, zb
     binsYps = [0.000, 0.100, 0.150, 0.200, 0.233, 0.266, 0.300, 0.333, 0.366, 0.400, 0.433, 0.466, 0.500, 0.533, 0.566, 0.600, 0.633, 0.666, 0.700, 0.733, 0.766, 0.800, 0.850, 0.900, 0.950, 1.000]
     binsYgrav = [0.000, 0.100, 0.150, 0.175 , 0.200, 0.225, 0.250, 0.275, 0.300, 0.325, 0.350, 0.375, 0.400, 0.425 , 0.450, 0.475, 0.500, 0.525, 0.575, 0.600, 0.633, 0.666, 0.700, 0.733 , 0.766, 0.800, 0.850, 0.900, 0.950, 1.000]
 
-    abinsX = array.array('d',binsX)
-    abinsYps = array.array('d',binsYps)
-    abinsYgrav = array.array('d',binsYgrav)
+    abinsX = array('d',binsX)
+    abinsYps = array('d',binsYps)
+    abinsYgrav = array('d',binsYgrav)
     
     bnn_jcp_2PM = TH2F(name+"_2PM", name+"_2PM", nbinsX, abinsX, nbinsYgrav, abinsYgrav)
     bnn_jcp_0M  = TH2F(name+"_0M", name+"_0M", nbinsX, abinsX, nbinsYps, abinsYps)
@@ -363,7 +373,7 @@ def makeplot3d(files, name, xmin, ymin, zmin, xmax, ymax, zmax, xbins, ybins, zb
 
 #            print "rw: {}, weight: {},  event.f_pu_weight: {},  event.f_eff_weight: {} ".format(bool_reweight, weight,  event.f_pu_weight,  event.f_eff_weight )
 
-            newweight = array.array('f',[0.])
+            newweight = array('f',[0.])
             treeouttrain.SetBranchAddress( 'f_weight', newweight )    
             newweight[0] = weight
 #            print "weight: {},  event.f_weight: {},  event.f_pu_weight: {},  event.f_eff_weight: {},  event.f_int_weight: {},  global_reweight: {},  weight_sum, {} ".format(weight, event.f_weight, event.f_pu_weight,  event.f_eff_weight, event.f_int_weight,  global_reweight,  weight_sum )

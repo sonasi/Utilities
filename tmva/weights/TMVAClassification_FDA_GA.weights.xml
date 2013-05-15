@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<MethodSetup Method="FDA::FDA_GA">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.1.4 [262404]"/>
+    <Info name="ROOT Release" value="5.34/05 [336389]"/>
+    <Info name="Creator" value="jbochenek"/>
+    <Info name="Date" value="Mon Apr 15 11:19:05 2013"/>
+    <Info name="Host" value="Linux ubuntu 3.2.0-39-generic #62-Ubuntu SMP Wed Feb 27 22:05:17 UTC 2013 i686 i686 i386 GNU/Linux"/>
+    <Info name="Dir" value="/mnt/hgfs/work/HZZ4l_2013/scripts"/>
+    <Info name="Training events" value="10000"/>
+    <Info name="TrainingTime" value="6.84252601e+01"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="No">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="Formula" modified="Yes">(0)+(1)*x0+(2)*x1+(3)*x2+(4)*x3</Option>
+    <Option name="ParRanges" modified="Yes">(-1,1);(-10,10);(-10,10);(-10,10);(-10,10)</Option>
+    <Option name="FitMethod" modified="Yes">GA</Option>
+    <Option name="Converger" modified="No">None</Option>
+  </Options>
+  <Variables NVar="7">
+    <Variable VarIndex="0" Expression="f_angle_costhetastar" Label="f_angle_costhetastar" Title="f_angle_costhetastar" Unit="" Internal="f_angle_costhetastar" Type="F" Min="-9.90000000e+01" Max="9.99695241e-01"/>
+    <Variable VarIndex="1" Expression="f_angle_costheta1" Label="f_angle_costheta1" Title="f_angle_costheta1" Unit="" Internal="f_angle_costheta1" Type="F" Min="-9.90000000e+01" Max="9.99956787e-01"/>
+    <Variable VarIndex="2" Expression="f_angle_costheta2" Label="f_angle_costheta2" Title="f_angle_costheta2" Unit="" Internal="f_angle_costheta2" Type="F" Min="-9.90000000e+01" Max="9.99614596e-01"/>
+    <Variable VarIndex="3" Expression="f_angle_phi" Label="f_angle_phi" Title="f_angle_phi" Unit="" Internal="f_angle_phi" Type="F" Min="-9.90000000e+01" Max="3.14143348e+00"/>
+    <Variable VarIndex="4" Expression="f_angle_phistar1" Label="f_angle_phistar1" Title="f_angle_phistar1" Unit="" Internal="f_angle_phistar1" Type="F" Min="-9.90000000e+01" Max="3.14026070e+00"/>
+    <Variable VarIndex="5" Expression="f_Z1mass" Label="f_Z1mass" Title="f_Z1mass" Unit="" Internal="f_Z1mass" Type="F" Min="4.03993835e+01" Max="1.17858093e+02"/>
+    <Variable VarIndex="6" Expression="f_Z2mass" Label="f_Z2mass" Title="f_Z2mass" Unit="" Internal="f_Z2mass" Type="F" Min="1.20253534e+01" Max="1.14000206e+02"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs/>
+  <Weights NPars="5" NDim="1" Formula="(0)+(1)*x0+(2)*x1+(3)*x2+(4)*x3">
+    <Parameter Index="0" Value="4.9888249649943139e-01"/>
+    <Parameter Index="1" Value="0.0000000000000000e+00"/>
+    <Parameter Index="2" Value="0.0000000000000000e+00"/>
+    <Parameter Index="3" Value="0.0000000000000000e+00"/>
+    <Parameter Index="4" Value="0.0000000000000000e+00"/>
+  </Weights>
+</MethodSetup>

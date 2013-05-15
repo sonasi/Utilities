@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<MethodSetup Method="LD::LD">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.1.4 [262404]"/>
+    <Info name="ROOT Release" value="5.34/05 [336389]"/>
+    <Info name="Creator" value="jbochenek"/>
+    <Info name="Date" value="Mon Apr 15 11:17:56 2013"/>
+    <Info name="Host" value="Linux ubuntu 3.2.0-39-generic #62-Ubuntu SMP Wed Feb 27 22:05:17 UTC 2013 i686 i686 i386 GNU/Linux"/>
+    <Info name="Dir" value="/mnt/hgfs/work/HZZ4l_2013/scripts"/>
+    <Info name="Training events" value="10000"/>
+    <Info name="TrainingTime" value="5.96909523e-02"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="Yes">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="Yes">True</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+  </Options>
+  <Variables NVar="7">
+    <Variable VarIndex="0" Expression="f_angle_costhetastar" Label="f_angle_costhetastar" Title="f_angle_costhetastar" Unit="" Internal="f_angle_costhetastar" Type="F" Min="-9.90000000e+01" Max="9.99695241e-01"/>
+    <Variable VarIndex="1" Expression="f_angle_costheta1" Label="f_angle_costheta1" Title="f_angle_costheta1" Unit="" Internal="f_angle_costheta1" Type="F" Min="-9.90000000e+01" Max="9.99956787e-01"/>
+    <Variable VarIndex="2" Expression="f_angle_costheta2" Label="f_angle_costheta2" Title="f_angle_costheta2" Unit="" Internal="f_angle_costheta2" Type="F" Min="-9.90000000e+01" Max="9.99614596e-01"/>
+    <Variable VarIndex="3" Expression="f_angle_phi" Label="f_angle_phi" Title="f_angle_phi" Unit="" Internal="f_angle_phi" Type="F" Min="-9.90000000e+01" Max="3.14143348e+00"/>
+    <Variable VarIndex="4" Expression="f_angle_phistar1" Label="f_angle_phistar1" Title="f_angle_phistar1" Unit="" Internal="f_angle_phistar1" Type="F" Min="-9.90000000e+01" Max="3.14026070e+00"/>
+    <Variable VarIndex="5" Expression="f_Z1mass" Label="f_Z1mass" Title="f_Z1mass" Unit="" Internal="f_Z1mass" Type="F" Min="4.03993835e+01" Max="1.17858093e+02"/>
+    <Variable VarIndex="6" Expression="f_Z2mass" Label="f_Z2mass" Title="f_Z2mass" Unit="" Internal="f_Z2mass" Type="F" Min="1.20253534e+01" Max="1.14000206e+02"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs>
+    <PDF Name="LD_PDFSig" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="LD_tr_S_original" NBins="50" XMin="-2.9250171035528183e-02" XMax="5.7394307851791382e-01" HasEquidistantBins="1">
+        0.00000000e+00 1.65817512e-02 1.32654010e-01 9.94905073e-02 2.32144517e-01 5.30616039e-01 8.95414566e-01 1.12755908e+00 1.62501162e+00 2.38777218e+00 3.08420573e+00 3.49874951e+00 4.01278379e+00 4.14543780e+00 3.84696628e+00 4.16201956e+00 4.37758232e+00 4.14543780e+00 3.46558600e+00 3.48216776e+00 3.25002324e+00 2.93496997e+00 3.08420573e+00 2.76915245e+00 2.68624370e+00 2.70282545e+00 2.25511817e+00 2.02297365e+00 1.90690139e+00 1.97322839e+00 1.77424738e+00 1.39286710e+00 1.57526637e+00 1.35970360e+00 1.16072259e+00 1.29337659e+00 1.02806858e+00 7.79342307e-01 5.30616039e-01 4.80870785e-01 2.15562766e-01 1.98981015e-01 1.49235761e-01 4.97452537e-02 1.65817512e-02 1.65817512e-02 0.00000000e+00 1.65817512e-02 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+    <PDF Name="LD_PDFBkg" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="LD_tr_B_original" NBins="50" XMin="-2.9250171035528183e-02" XMax="5.7394307851791382e-01" HasEquidistantBins="1">
+        6.73848644e-03 2.02503848e-03 2.41657510e-02 2.21491135e-01 3.69839387e-01 7.11835540e-01 9.24485255e-01 1.64497139e+00 2.44843982e+00 3.07552629e+00 3.21485227e+00 4.15752701e+00 4.38633721e+00 4.91346255e+00 6.55449164e+00 5.96563018e+00 5.72257109e+00 5.38581046e+00 4.63548845e+00 4.17169278e+00 3.69431633e+00 3.64763743e+00 2.76936988e+00 2.64837664e+00 2.50213954e+00 1.45130271e+00 1.35948752e+00 1.06546176e+00 7.19310777e-01 6.36973265e-01 4.75593737e-01 3.72844323e-01 3.91933190e-01 4.53547972e-01 3.41938243e-01 4.30491635e-01 2.61081110e-01 3.38795664e-01 2.84467226e-01 2.49360237e-01 1.60303009e-01 5.34343364e-02 8.90572274e-03 8.90572274e-03 2.67171682e-02 2.09745526e-03 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+  </MVAPdfs>
+  <Weights NOut="1" NCoeff="8">
+    <Coefficient IndexOut="0" IndexCoeff="0" Value="-1.9189265492342308e-01"/>
+    <Coefficient IndexOut="0" IndexCoeff="1" Value="-8.3531621012685863e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="2" Value="9.1246697926206689e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="3" Value="1.2562260896144135e-02"/>
+    <Coefficient IndexOut="0" IndexCoeff="4" Value="-2.9615802235354147e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="5" Value="-1.0813251341084315e-02"/>
+    <Coefficient IndexOut="0" IndexCoeff="6" Value="2.1734383172460027e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="7" Value="4.9453219777046819e-03"/>
+  </Weights>
+</MethodSetup>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<MethodSetup Method="LD::LD">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.1.4 [262404]"/>
+    <Info name="ROOT Release" value="5.34/05 [336389]"/>
+    <Info name="Creator" value="jbochenek"/>
+    <Info name="Date" value="Mon Apr 15 15:56:19 2013"/>
+    <Info name="Host" value="Linux ubuntu 3.2.0-39-generic #62-Ubuntu SMP Wed Feb 27 22:05:17 UTC 2013 i686 i686 i386 GNU/Linux"/>
+    <Info name="Dir" value="/mnt/hgfs/work/HZZ4l_2013/scripts"/>
+    <Info name="Training events" value="6000"/>
+    <Info name="TrainingTime" value="6.58583641e-03"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="Yes">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="Yes">True</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+  </Options>
+  <Variables NVar="4">
+    <Variable VarIndex="0" Expression="f_Z1mass" Label="f_Z1mass" Title="f_Z1mass" Unit="" Internal="f_Z1mass" Type="F" Min="4.03993835e+01" Max="1.16369629e+02"/>
+    <Variable VarIndex="1" Expression="f_Z2mass" Label="f_Z2mass" Title="f_Z2mass" Unit="" Internal="f_Z2mass" Type="F" Min="1.20306969e+01" Max="1.08812988e+02"/>
+    <Variable VarIndex="2" Expression="f_pt4l" Label="f_pt4l" Title="f_pt4l" Unit="" Internal="f_pt4l" Type="F" Min="-9.90000000e+01" Max="5.01772858e+02"/>
+    <Variable VarIndex="3" Expression="f_eta4l" Label="f_eta4l" Title="f_eta4l" Unit="" Internal="f_eta4l" Type="F" Min="-9.90000000e+01" Max="6.83502865e+00"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs>
+    <PDF Name="LD_PDFSig" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="LD_tr_S_original" NBins="50" XMin="-1.2148798257112503e-01" XMax="2.1835997104644775e+00" HasEquidistantBins="1">
+        1.44655877e-02 4.33967631e-02 2.02518228e-01 5.85856301e-01 1.07045349e+00 1.57674906e+00 1.64184420e+00 2.14090698e+00 2.47361549e+00 2.09027742e+00 1.81543125e+00 1.50442112e+00 1.36699804e+00 1.00535834e+00 8.46236880e-01 6.87115415e-01 5.27993951e-01 4.19502043e-01 3.18242929e-01 2.96544548e-01 2.89311754e-01 1.95285434e-01 1.01259114e-01 9.40263200e-02 1.08491908e-01 5.06295569e-02 4.33967631e-02 1.44655877e-02 2.89311754e-02 2.89311754e-02 1.44655877e-02 2.16983815e-02 2.16983815e-02 0.00000000e+00 0.00000000e+00 3.61639692e-02 7.23279384e-03 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 7.23279384e-03 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+    <PDF Name="LD_PDFBkg" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="LD_tr_B_original" NBins="50" XMin="-1.2148798257112503e-01" XMax="2.1835997104644775e+00" HasEquidistantBins="1">
+        4.92321939e-02 4.90401262e-01 1.65232004e+00 2.89635122e+00 3.89711042e+00 3.46105853e+00 3.03662751e+00 1.73510832e+00 1.34671510e+00 9.76375330e-01 6.40890898e-01 3.50720996e-01 2.76495373e-01 2.65336847e-01 1.52206518e-01 8.19202230e-02 3.82364948e-02 6.78649960e-02 7.23241400e-02 3.74357614e-02 2.74217999e-03 2.18784671e-02 1.82811999e-03 3.49265763e-02 9.14059996e-04 1.26907712e-02 9.14059996e-04 9.64880637e-03 2.12613684e-03 2.07675929e-02 1.92976127e-02 0.00000000e+00 0.00000000e+00 9.14059996e-04 0.00000000e+00 0.00000000e+00 9.64880637e-03 1.25332782e-02 0.00000000e+00 0.00000000e+00 1.17049634e-02 0.00000000e+00 0.00000000e+00 0.00000000e+00 3.88106725e-03 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+  </MVAPdfs>
+  <Weights NOut="1" NCoeff="5">
+    <Coefficient IndexOut="0" IndexCoeff="0" Value="-2.3361229736593384e-01"/>
+    <Coefficient IndexOut="0" IndexCoeff="1" Value="1.0683064478155652e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="2" Value="4.2169926810123898e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="3" Value="4.3176704643085196e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="4" Value="-5.9431977852000082e-03"/>
+  </Weights>
+</MethodSetup>
